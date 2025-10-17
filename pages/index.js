@@ -126,18 +126,30 @@ export default function Home() {
                   <div>
                     <h3>Awards & Honors</h3>
                     <ul className="awards">
-                      <li>2024 Nashville Music Awards</li>
+                      <li>
+                        2024 Nashville Music Awards
+                        <div style={{ marginTop: "10px" }}>
+                          <img
+                            src="/recording-academy-logo.avif"
+                            alt="Recording Academy Logo"
+                          />
+                        </div>
+                      </li>
                       <li>2022 Nashville Music Awards</li>
                       <li>
                         2020 New York Acoustic Guitar Project — Portland Region
                       </li>
-                      <li>2018 BOSE Las Vegas — Producers Choice Award</li>
+                      <li>
+                        2018 BOSE Las Vegas — Producers Choice Award
+                        <div style={{ marginTop: "10px" }}>
+                          <img
+                            src="/fame-las-vegas.jpg"
+                            alt="F.A.M.E. Las Vegas feature"
+                          />
+                        </div>
+                      </li>
                       <li>2008 Portland Music Awards</li>
                     </ul>
-                    <div style={{ marginTop: "16px", display: "grid", gap: "12px" }}>
-                      <img src="/fame-las-vegas.jpg" alt="F.A.M.E. Las Vegas feature" />
-                      <img src="/recording-academy-logo.avif" alt="Recording Academy" />
-                    </div>
                   </div>
                 </div>
 
