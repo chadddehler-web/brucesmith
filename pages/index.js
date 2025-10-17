@@ -1,4 +1,3 @@
-// pages/index.js
 import Head from "next/head";
 
 export default function Home() {
@@ -163,7 +162,7 @@ export default function Home() {
           <aside>
             <div className="panel pad">
               <img
-                src="recording_academy_logo_l.jpg"
+                src="/recording-academy-logo.avif"
                 alt="Recording Academy logo"
                 style={{
                   width: "100%",
@@ -196,16 +195,16 @@ export default function Home() {
           <div className="gallery">
             <figure className="wide">
               <img
-                src="FB PROMO LATEST 2020.jpg"
+                src="/fb-promo-2020.jpg"
                 alt="Bruce Thomas Smith — live promo"
               />
             </figure>
             <figure>
-              <img src="fame las vegas.jpg" alt="F.A.M.E. Las Vegas feature" />
+              <img src="/fame-las-vegas.jpg" alt="F.A.M.E. Las Vegas feature" />
             </figure>
             <figure>
               <img
-                src="recording_academy_logo_l.jpg"
+                src="/recording-academy-logo.avif"
                 alt="Recording Academy"
               />
             </figure>
