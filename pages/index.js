@@ -7,7 +7,7 @@ export default function Home() {
         <title>BRUCE THOMAS SMITH — Acoustic Site</title>
         <meta
           name="description"
-          content="Bruce Thomas Smith • Acoustic Site • Songwriter • 4x GRAMMY member • Awards & Credits • Media Gallery"
+          content="Bruce Thomas Smith • Acoustic Site • Songwriter • 4x GRAMMY member • Awards & Credits"
         />
         <meta property="og:title" content="BRUCE THOMAS SMITH — Acoustic Site" />
         <meta
@@ -79,17 +79,12 @@ export default function Home() {
           .badge .icon{width:12px;height:12px;border-radius:50%;background:var(--accent-2);margin-top:6px;}
           .badge h3{margin:0 0 6px;font-size:16px;}
           .badge p{margin:0;color:var(--muted);font-size:14px;}
-          .awards{margin-top:28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
-          @media (max-width:700px){.awards{grid-template-columns:1fr;}}
+          .awards{margin-top:18px;display:grid;gap:12px;}
           .awards li{list-style:none;padding:12px 14px;border-radius:12px;border:1px solid #27336a;
                      background:#0f1736;color:var(--txt);}
-          .gallery{margin-top:34px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:12px;}
-          .gallery img{width:100%;height:100%;object-fit:cover;border-radius:14px;
-                       border:1px solid #27336a;background:#0f1733;}
-          .gallery .wide{grid-row:span 2;min-height:320px;}
-          @media (max-width:900px){.gallery{grid-template-columns:1fr 1fr}.gallery .wide{grid-row:auto;}}
           footer{margin:50px 0 30px;text-align:center;color:var(--muted);}
           footer small{opacity:.9;}
+          img { border-radius:14px; border:1px solid #27336a; background:#0f1733; width:100%; height:auto; }
         `}</style>
       </Head>
 
@@ -121,13 +116,11 @@ export default function Home() {
               <a className="btn primary" href="#contact">
                 Request Booking
               </a>
-              <a className="btn ghost" href="#media">
-                View Media
-              </a>
             </div>
 
             <div className="panel pad" style={{ marginTop: "22px" }}>
               <div className="list">
+                {/* Awards & Honors */}
                 <div className="badge">
                   <span className="icon" aria-hidden="true"></span>
                   <div>
@@ -141,8 +134,14 @@ export default function Home() {
                       <li>2018 BOSE Las Vegas — Producers Choice Award</li>
                       <li>2008 Portland Music Awards</li>
                     </ul>
+                    <div style={{ marginTop: "16px", display: "grid", gap: "12px" }}>
+                      <img src="/fame-las-vegas.jpg" alt="F.A.M.E. Las Vegas feature" />
+                      <img src="/recording-academy-logo.avif" alt="Recording Academy" />
+                    </div>
                   </div>
                 </div>
+
+                {/* Quick Bio */}
                 <div className="badge">
                   <span className="icon" aria-hidden="true"></span>
                   <div>
@@ -153,61 +152,16 @@ export default function Home() {
                       media. For booking or press, use the contact section
                       below.
                     </p>
+                    <div style={{ marginTop: "16px" }}>
+                      <img
+                        src="/fb-promo-2020.jpg"
+                        alt="Bruce Thomas Smith — live promo"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          <aside>
-            <div className="panel pad">
-              <img
-                src="/recording-academy-logo.avif"
-                alt="Recording Academy logo"
-                style={{
-                  width: "100%",
-                  borderRadius: "14px",
-                  border: "1px solid #27336a",
-                }}
-              />
-              <p
-                style={{
-                  marginTop: "10px",
-                  color: "var(--muted)",
-                  fontSize: "14px",
-                }}
-              >
-                Member of the Recording Academy (GRAMMYs)
-              </p>
-            </div>
-          </aside>
-        </section>
-
-        <section id="media" style={{ marginTop: "40px" }}>
-          <h2
-            style={{
-              margin: "0 0 14px",
-              fontSize: "clamp(22px, 3.5vw, 32px)",
-            }}
-          >
-            Media Gallery
-          </h2>
-          <div className="gallery">
-            <figure className="wide">
-              <img
-                src="/fb-promo-2020.jpg"
-                alt="Bruce Thomas Smith — live promo"
-              />
-            </figure>
-            <figure>
-              <img src="/fame-las-vegas.jpg" alt="F.A.M.E. Las Vegas feature" />
-            </figure>
-            <figure>
-              <img
-                src="/recording-academy-logo.avif"
-                alt="Recording Academy"
-              />
-            </figure>
           </div>
         </section>
 
