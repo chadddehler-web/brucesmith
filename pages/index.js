@@ -14,27 +14,183 @@ export default function Home() {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Thank you! Your inquiry has been sent.");
-    // TODO: Replace alert with API call or email handler
   };
 
   return (
-    <div className="min-h-screen bg-green-50 text-gray-800 font-sans">
-      {/* Hero Section */}
-      <header className="bg-green-900 text-white py-20 text-center">
-        <h1 className="text-5xl font-bold">Reginald’s Golf Training</h1>
-        <p className="mt-4 text-lg text-green-100">
+    <div>
+      <style jsx>{`
+        body {
+          margin: 0;
+          font-family: "Inter", Arial, sans-serif;
+          background-color: #f0fdf4;
+          color: #1a202c;
+        }
+        header {
+          background-color: #065f46;
+          color: white;
+          text-align: center;
+          padding: 5rem 1rem;
+        }
+        header h1 {
+          font-size: 3rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+        }
+        header p {
+          max-width: 600px;
+          margin: 0 auto;
+          font-size: 1.1rem;
+          color: #d1fae5;
+        }
+        header button {
+          margin-top: 2rem;
+          padding: 0.8rem 1.5rem;
+          background: white;
+          color: #065f46;
+          border: none;
+          font-weight: 600;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: background 0.3s ease;
+        }
+        header button:hover {
+          background: #a7f3d0;
+        }
+        section {
+          padding: 4rem 1.5rem;
+          max-width: 1100px;
+          margin: 0 auto;
+        }
+        h2 {
+          font-size: 2rem;
+          font-weight: 700;
+          color: #064e3b;
+          margin-bottom: 1rem;
+          text-align: center;
+        }
+        .about p {
+          font-size: 1.1rem;
+          line-height: 1.7;
+          max-width: 800px;
+          margin: 0 auto;
+          text-align: center;
+        }
+        .services {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 1.5rem;
+          margin-top: 2rem;
+        }
+        .card {
+          background: white;
+          border: 1px solid #e5e7eb;
+          border-radius: 8px;
+          padding: 1.5rem;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+          transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .card h3 {
+          font-size: 1.3rem;
+          margin-bottom: 0.5rem;
+        }
+        .card p {
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+        .card strong {
+          display: block;
+          margin-top: 0.7rem;
+          color: #047857;
+        }
+        .testimonials {
+          background-color: #d1fae5;
+          padding: 4rem 1.5rem;
+        }
+        .testimonial-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 1.5rem;
+          margin-top: 2rem;
+        }
+        blockquote {
+          background: white;
+          border-radius: 8px;
+          padding: 1.5rem;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+          font-style: italic;
+          line-height: 1.6;
+        }
+        blockquote p {
+          margin-bottom: 0.5rem;
+        }
+        .inquiry {
+          background: white;
+          padding: 4rem 1.5rem;
+        }
+        form {
+          max-width: 500px;
+          margin: 0 auto;
+          background: #ecfdf5;
+          border-radius: 8px;
+          padding: 2rem;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+        input,
+        textarea {
+          width: 100%;
+          padding: 0.75rem;
+          border: 1px solid #d1d5db;
+          border-radius: 6px;
+          margin-bottom: 1rem;
+          font-size: 1rem;
+          outline: none;
+        }
+        input:focus,
+        textarea:focus {
+          border-color: #059669;
+          box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
+        }
+        button.submit {
+          width: 100%;
+          padding: 0.9rem;
+          font-weight: 600;
+          border: none;
+          border-radius: 6px;
+          background-color: #065f46;
+          color: white;
+          cursor: pointer;
+          transition: background 0.3s ease;
+        }
+        button.submit:hover {
+          background-color: #047857;
+        }
+        footer {
+          background-color: #064e3b;
+          color: white;
+          text-align: center;
+          padding: 1.5rem 0;
+          margin-top: 2rem;
+        }
+      `}</style>
+
+      {/* HERO */}
+      <header>
+        <h1>Reginald’s Golf Training</h1>
+        <p>
           Precision. Power. Performance. Personalized golf coaching designed to
           elevate your game.
         </p>
-        <button className="mt-8 px-6 py-3 bg-white text-green-900 font-semibold rounded hover:bg-green-200 transition">
-          Book Your First Lesson
-        </button>
+        <button>Book Your First Lesson</button>
       </header>
 
-      {/* About Section */}
-      <section className="max-w-5xl mx-auto py-16 px-6">
-        <h2 className="text-3xl font-bold text-green-800 mb-4">About Reginald</h2>
-        <p className="text-lg leading-relaxed">
+      {/* ABOUT */}
+      <section className="about">
+        <h2>About Reginald</h2>
+        <p>
           Reginald’s Golf Training provides personalized lessons for golfers of
           all levels — from beginners learning fundamentals to experienced
           players refining their swing. With years of experience and a passion
@@ -43,152 +199,123 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Services Section */}
-      <section className="bg-white py-16">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-green-800 mb-8 text-center">
-            Coaching Services
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="p-6 border rounded-lg shadow hover:shadow-lg transition">
-              <h3 className="text-2xl font-semibold mb-3">Private Lessons</h3>
-              <p>
-                One-on-one coaching focused on fundamentals, swing mechanics,
-                and personalized improvement plans. Ideal for golfers who want
-                rapid progress and direct feedback.
-              </p>
-              <p className="mt-3 font-semibold">$80 / Hour</p>
-            </div>
+      {/* SERVICES */}
+      <section>
+        <h2>Coaching Services</h2>
+        <div className="services">
+          <div className="card">
+            <h3>Private Lessons</h3>
+            <p>
+              One-on-one coaching focused on fundamentals, swing mechanics, and
+              personalized improvement plans.
+            </p>
+            <strong>$80 / Hour</strong>
+          </div>
 
-            <div className="p-6 border rounded-lg shadow hover:shadow-lg transition">
-              <h3 className="text-2xl font-semibold mb-3">3-Lesson Package</h3>
-              <p>
-                Perfect for building consistency over multiple sessions.
-                Includes swing video analysis and tailored drills for lasting
-                improvement.
-              </p>
-              <p className="mt-3 font-semibold">$200 / Package</p>
-            </div>
+          <div className="card">
+            <h3>3-Lesson Package</h3>
+            <p>
+              Perfect for building consistency. Includes swing video analysis
+              and tailored drills for lasting improvement.
+            </p>
+            <strong>$200 / Package</strong>
+          </div>
 
-            <div className="p-6 border rounded-lg shadow hover:shadow-lg transition">
-              <h3 className="text-2xl font-semibold mb-3">Junior Golf Program</h3>
-              <p>
-                Youth coaching focused on developing proper technique, course
-                etiquette, and confidence. Great for young athletes looking to
-                get competitive.
-              </p>
-              <p className="mt-3 font-semibold">Starting at $50 / Session</p>
-            </div>
+          <div className="card">
+            <h3>Junior Golf Program</h3>
+            <p>
+              Youth coaching focused on proper technique, etiquette, and
+              confidence — great for young athletes looking to compete.
+            </p>
+            <strong>$50 / Session</strong>
+          </div>
 
-            <div className="p-6 border rounded-lg shadow hover:shadow-lg transition">
-              <h3 className="text-2xl font-semibold mb-3">
-                Corporate & Group Clinics
-              </h3>
-              <p>
-                Interactive clinics designed for teams or businesses looking for
-                fun, team-building, and golf skill improvement.
-              </p>
-              <p className="mt-3 font-semibold">Custom Pricing</p>
-            </div>
+          <div className="card">
+            <h3>Corporate & Group Clinics</h3>
+            <p>
+              Interactive sessions designed for teams or companies wanting to
+              learn golf and build connections in a fun, supportive environment.
+            </p>
+            <strong>Custom Pricing</strong>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="bg-green-100 py-16">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-green-800 mb-8">
-            What Clients Are Saying
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <blockquote className="bg-white p-6 rounded shadow">
-              <p className="italic">
-                “Reginald helped me fix my slice in just three lessons. I’m
-                hitting straighter than ever!”
-              </p>
-              <p className="mt-3 font-semibold text-green-700">— David L.</p>
-            </blockquote>
+      {/* TESTIMONIALS */}
+      <section className="testimonials">
+        <h2>What Clients Are Saying</h2>
+        <div className="testimonial-grid">
+          <blockquote>
+            <p>
+              “Reginald helped me fix my slice in just three lessons. I’m hitting
+              straighter than ever!”
+            </p>
+            <cite>— David L.</cite>
+          </blockquote>
 
-            <blockquote className="bg-white p-6 rounded shadow">
-              <p className="italic">
-                “His approach is professional yet fun. My handicap dropped by 5
-                strokes this season.”
-              </p>
-              <p className="mt-3 font-semibold text-green-700">— Sarah K.</p>
-            </blockquote>
+          <blockquote>
+            <p>
+              “His approach is professional yet fun. My handicap dropped by 5
+              strokes this season.”
+            </p>
+            <cite>— Sarah K.</cite>
+          </blockquote>
 
-            <blockquote className="bg-white p-6 rounded shadow">
-              <p className="italic">
-                “The best coach I’ve ever had — Reginald’s video feedback is a
-                game changer.”
-              </p>
-              <p className="mt-3 font-semibold text-green-700">— James P.</p>
-            </blockquote>
-          </div>
+          <blockquote>
+            <p>
+              “The best coach I’ve ever had — Reginald’s video feedback is a game
+              changer.”
+            </p>
+            <cite>— James P.</cite>
+          </blockquote>
         </div>
       </section>
 
-      {/* Inquiry Form */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-green-800 mb-6">
-            Get In Touch
-          </h2>
-          <p className="text-lg mb-8">
-            Ready to improve your swing or book your first session? Fill out the
-            form below and Reginald will get back to you within 24 hours.
-          </p>
+      {/* INQUIRY FORM */}
+      <section className="inquiry">
+        <h2>Get In Touch</h2>
+        <p style={{ textAlign: "center", maxWidth: "600px", margin: "0 auto 2rem" }}>
+          Ready to improve your swing or book your first session? Fill out the
+          form below and Reginald will get back to you within 24 hours.
+        </p>
 
-          <form
-            onSubmit={handleSubmit}
-            className="max-w-2xl mx-auto bg-green-50 p-8 rounded-lg shadow"
-          >
-            <div className="mb-4">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 border rounded focus:outline-none focus:ring-2 focus:ring-green-600"
-              />
-            </div>
-            <div className="mb-4">
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 border rounded focus:outline-none focus:ring-2 focus:ring-green-600"
-              />
-            </div>
-            <div className="mb-6">
-              <textarea
-                name="message"
-                placeholder="Tell us about your goals..."
-                value={formData.message}
-                onChange={handleChange}
-                rows="4"
-                required
-                className="w-full px-4 py-3 border rounded focus:outline-none focus:ring-2 focus:ring-green-600"
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-green-800 text-white py-3 rounded font-semibold hover:bg-green-700 transition"
-            >
-              Submit Inquiry
-            </button>
-          </form>
-        </div>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            name="message"
+            rows="4"
+            placeholder="Tell us about your goals..."
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></textarea>
+          <button className="submit" type="submit">
+            Submit Inquiry
+          </button>
+        </form>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-green-900 text-white text-center py-6">
-        <p>© {new Date().getFullYear()} Reginald’s Golf Training • All Rights Reserved</p>
+      {/* FOOTER */}
+      <footer>
+        <p>
+          © {new Date().getFullYear()} Reginald’s Golf Training • All Rights
+          Reserved
+        </p>
       </footer>
     </div>
   );
