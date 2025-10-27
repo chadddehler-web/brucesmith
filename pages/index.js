@@ -3,9 +3,7 @@ import { useState } from "react";
 export default function Home() {
   const [formData, setFormData] = useState({
     name: "",
-    phone: "",
     email: "",
-    service: "",
     message: "",
   });
 
@@ -15,278 +13,182 @@ export default function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Thanks! Your free estimate request has been received.");
-    setFormData({
-      name: "",
-      phone: "",
-      email: "",
-      service: "",
-      message: "",
-    });
+    alert("Thank you! Your inquiry has been sent.");
+    // TODO: Replace alert with API call or email handler
   };
 
   return (
-    <div style={{ fontFamily: "Inter, sans-serif", background: "#fff6ef", color: "#1a1a1a" }}>
-      <header
-        style={{
-          background: "linear-gradient(135deg,#e63946,#ff9f1c)",
-          color: "#fff",
-          textAlign: "center",
-          padding: "60px 20px",
-        }}
-      >
-        <h1 style={{ fontSize: "clamp(28px,6vw,48px)", fontWeight: 800, marginBottom: 10 }}>
-          Matt Hughes Windows & Power Washing
-        </h1>
-        <p style={{ fontSize: 18, marginBottom: 20 }}>
-          Making Your Home Shine — Windows, Gutters & Driveways Cleaned Right!
+    <div className="min-h-screen bg-green-50 text-gray-800 font-sans">
+      {/* Hero Section */}
+      <header className="bg-green-900 text-white py-20 text-center">
+        <h1 className="text-5xl font-bold">Reginald’s Golf Training</h1>
+        <p className="mt-4 text-lg text-green-100">
+          Precision. Power. Performance. Personalized golf coaching designed to
+          elevate your game.
         </p>
-        <a
-          href="#estimate"
-          style={{
-            background: "#fff",
-            color: "#e63946",
-            padding: "14px 24px",
-            borderRadius: "999px",
-            fontWeight: 700,
-            textDecoration: "none",
-            boxShadow: "0 4px 16px rgba(0,0,0,.1)",
-          }}
-        >
-          Get a Free Estimate
-        </a>
+        <button className="mt-8 px-6 py-3 bg-white text-green-900 font-semibold rounded hover:bg-green-200 transition">
+          Book Your First Lesson
+        </button>
       </header>
 
-      <nav
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          flexWrap: "wrap",
-          gap: 14,
-          background: "#fff",
-          boxShadow: "0 4px 16px rgba(0,0,0,.1)",
-          padding: 12,
-          position: "sticky",
-          top: 0,
-          zIndex: 10,
-        }}
-      >
-        <a href="#services" style={{ color: "#e63946", textDecoration: "none", fontWeight: 600 }}>
-          Services
-        </a>
-        <a href="#gallery" style={{ color: "#e63946", textDecoration: "none", fontWeight: 600 }}>
-          Gallery
-        </a>
-        <a href="#estimate" style={{ color: "#e63946", textDecoration: "none", fontWeight: 600 }}>
-          Free Estimate
-        </a>
-      </nav>
+      {/* About Section */}
+      <section className="max-w-5xl mx-auto py-16 px-6">
+        <h2 className="text-3xl font-bold text-green-800 mb-4">About Reginald</h2>
+        <p className="text-lg leading-relaxed">
+          Reginald’s Golf Training provides personalized lessons for golfers of
+          all levels — from beginners learning fundamentals to experienced
+          players refining their swing. With years of experience and a passion
+          for teaching, Reginald combines modern swing analysis technology with
+          proven coaching methods to deliver real, measurable improvement.
+        </p>
+      </section>
 
-      {/* Services */}
-      <section id="services" style={{ padding: "60px 20px", maxWidth: 1100, margin: "auto" }}>
-        <h2
-          style={{
-            color: "#e63946",
-            fontSize: "clamp(22px,4vw,32px)",
-            marginBottom: 20,
-            textAlign: "center",
-          }}
-        >
-          Our Services
-        </h2>
-        <div
-          style={{
-            display: "grid",
-            gap: 20,
-            gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
-          }}
-        >
-          {[
-            {
-              img: "https://cdn-icons-png.flaticon.com/512/1086/1086933.png",
-              title: "Window Cleaning",
-              text: "Crystal clear, streak-free results for homes and storefronts. Inside and out — guaranteed shine.",
-            },
-            {
-              img: "https://cdn-icons-png.flaticon.com/512/728/728093.png",
-              title: "Power Washing",
-              text: "Remove dirt, mold, and grime from driveways, siding, patios, and fences with safe, high-pressure cleaning.",
-            },
-            {
-              img: "https://cdn-icons-png.flaticon.com/512/706/706178.png",
-              title: "Gutter Cleaning",
-              text: "Keep your gutters flowing freely. We clear debris and flush downspouts so rainwater drains properly.",
-            },
-          ].map((service, i) => (
-            <div
-              key={i}
-              style={{
-                background: "#fff",
-                borderRadius: 12,
-                boxShadow: "0 4px 16px rgba(0,0,0,.1)",
-                padding: 24,
-                textAlign: "center",
-                transition: "transform .2s",
-              }}
-            >
-              <img
-                src={service.img}
-                alt={service.title}
-                style={{
-                  width: 80,
-                  height: 80,
-                  objectFit: "contain",
-                  marginBottom: 10,
-                }}
-              />
-              <h3 style={{ color: "#ff9f1c", marginBottom: 10 }}>{service.title}</h3>
-              <p style={{ fontSize: 15 }}>{service.text}</p>
+      {/* Services Section */}
+      <section className="bg-white py-16">
+        <div className="max-w-5xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-green-800 mb-8 text-center">
+            Coaching Services
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="p-6 border rounded-lg shadow hover:shadow-lg transition">
+              <h3 className="text-2xl font-semibold mb-3">Private Lessons</h3>
+              <p>
+                One-on-one coaching focused on fundamentals, swing mechanics,
+                and personalized improvement plans. Ideal for golfers who want
+                rapid progress and direct feedback.
+              </p>
+              <p className="mt-3 font-semibold">$80 / Hour</p>
             </div>
-          ))}
+
+            <div className="p-6 border rounded-lg shadow hover:shadow-lg transition">
+              <h3 className="text-2xl font-semibold mb-3">3-Lesson Package</h3>
+              <p>
+                Perfect for building consistency over multiple sessions.
+                Includes swing video analysis and tailored drills for lasting
+                improvement.
+              </p>
+              <p className="mt-3 font-semibold">$200 / Package</p>
+            </div>
+
+            <div className="p-6 border rounded-lg shadow hover:shadow-lg transition">
+              <h3 className="text-2xl font-semibold mb-3">Junior Golf Program</h3>
+              <p>
+                Youth coaching focused on developing proper technique, course
+                etiquette, and confidence. Great for young athletes looking to
+                get competitive.
+              </p>
+              <p className="mt-3 font-semibold">Starting at $50 / Session</p>
+            </div>
+
+            <div className="p-6 border rounded-lg shadow hover:shadow-lg transition">
+              <h3 className="text-2xl font-semibold mb-3">
+                Corporate & Group Clinics
+              </h3>
+              <p>
+                Interactive clinics designed for teams or businesses looking for
+                fun, team-building, and golf skill improvement.
+              </p>
+              <p className="mt-3 font-semibold">Custom Pricing</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Gallery */}
-      <section id="gallery" style={{ padding: "60px 20px", maxWidth: 1100, margin: "auto" }}>
-        <h2
-          style={{
-            color: "#e63946",
-            fontSize: "clamp(22px,4vw,32px)",
-            marginBottom: 20,
-            textAlign: "center",
-          }}
-        >
-          Before & After Gallery
-        </h2>
-        <div
-          style={{
-            display: "grid",
-            gap: 12,
-            gridTemplateColumns: "repeat(auto-fit,minmax(160px,1fr))",
-          }}
-        >
-          {[
-            "https://images.unsplash.com/photo-1616627983823-3f6cb12f38f5?auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1589394812473-1f98c2b17052?auto=format&fit=crop&w=800&q=60",
-          ].map((src, i) => (
-            <img
-              key={i}
-              src={src}
-              alt="Project"
-              style={{
-                width: "100%",
-                borderRadius: 10,
-                boxShadow: "0 4px 16px rgba(0,0,0,.1)",
-              }}
-            />
-          ))}
+      {/* Testimonials */}
+      <section className="bg-green-100 py-16">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold text-green-800 mb-8">
+            What Clients Are Saying
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <blockquote className="bg-white p-6 rounded shadow">
+              <p className="italic">
+                “Reginald helped me fix my slice in just three lessons. I’m
+                hitting straighter than ever!”
+              </p>
+              <p className="mt-3 font-semibold text-green-700">— David L.</p>
+            </blockquote>
+
+            <blockquote className="bg-white p-6 rounded shadow">
+              <p className="italic">
+                “His approach is professional yet fun. My handicap dropped by 5
+                strokes this season.”
+              </p>
+              <p className="mt-3 font-semibold text-green-700">— Sarah K.</p>
+            </blockquote>
+
+            <blockquote className="bg-white p-6 rounded shadow">
+              <p className="italic">
+                “The best coach I’ve ever had — Reginald’s video feedback is a
+                game changer.”
+              </p>
+              <p className="mt-3 font-semibold text-green-700">— James P.</p>
+            </blockquote>
+          </div>
         </div>
       </section>
 
-      {/* Estimate Form */}
-      <section id="estimate" style={{ padding: "60px 20px", maxWidth: 600, margin: "auto" }}>
-        <h2
-          style={{
-            color: "#e63946",
-            fontSize: "clamp(22px,4vw,32px)",
-            marginBottom: 20,
-            textAlign: "center",
-          }}
-        >
-          Request Your Free Estimate
-        </h2>
-        <div
-          style={{
-            background: "#fff",
-            borderRadius: 12,
-            boxShadow: "0 4px 16px rgba(0,0,0,.1)",
-            padding: 24,
-          }}
-        >
-          <form onSubmit={handleSubmit} style={{ display: "grid", gap: 16 }}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Full Name"
-              required
-              value={formData.name}
-              onChange={handleChange}
-              style={{ padding: 12, borderRadius: 8, border: "1px solid #ccc", fontSize: 15 }}
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number"
-              required
-              value={formData.phone}
-              onChange={handleChange}
-              style={{ padding: 12, borderRadius: 8, border: "1px solid #ccc", fontSize: 15 }}
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              required
-              value={formData.email}
-              onChange={handleChange}
-              style={{ padding: 12, borderRadius: 8, border: "1px solid #ccc", fontSize: 15 }}
-            />
-            <select
-              name="service"
-              required
-              value={formData.service}
-              onChange={handleChange}
-              style={{ padding: 12, borderRadius: 8, border: "1px solid #ccc", fontSize: 15 }}
-            >
-              <option value="">Select Service</option>
-              <option>Window Cleaning</option>
-              <option>Power Washing</option>
-              <option>Gutter Cleaning</option>
-              <option>Bundle (2 or more)</option>
-            </select>
-            <textarea
-              name="message"
-              rows="4"
-              placeholder="Tell us about your project (size, surfaces, etc.)"
-              value={formData.message}
-              onChange={handleChange}
-              style={{ padding: 12, borderRadius: 8, border: "1px solid #ccc", fontSize: 15 }}
-            />
+      {/* Inquiry Form */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold text-green-800 mb-6">
+            Get In Touch
+          </h2>
+          <p className="text-lg mb-8">
+            Ready to improve your swing or book your first session? Fill out the
+            form below and Reginald will get back to you within 24 hours.
+          </p>
+
+          <form
+            onSubmit={handleSubmit}
+            className="max-w-2xl mx-auto bg-green-50 p-8 rounded-lg shadow"
+          >
+            <div className="mb-4">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 border rounded focus:outline-none focus:ring-2 focus:ring-green-600"
+              />
+            </div>
+            <div className="mb-4">
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 border rounded focus:outline-none focus:ring-2 focus:ring-green-600"
+              />
+            </div>
+            <div className="mb-6">
+              <textarea
+                name="message"
+                placeholder="Tell us about your goals..."
+                value={formData.message}
+                onChange={handleChange}
+                rows="4"
+                required
+                className="w-full px-4 py-3 border rounded focus:outline-none focus:ring-2 focus:ring-green-600"
+              ></textarea>
+            </div>
             <button
               type="submit"
-              style={{
-                background: "linear-gradient(90deg,#e63946,#ff9f1c)",
-                color: "#fff",
-                border: "none",
-                borderRadius: "999px",
-                padding: "14px 18px",
-                fontWeight: 700,
-                fontSize: 16,
-                cursor: "pointer",
-                boxShadow: "0 4px 16px rgba(0,0,0,.1)",
-              }}
+              className="w-full bg-green-800 text-white py-3 rounded font-semibold hover:bg-green-700 transition"
             >
-              Submit Request
+              Submit Inquiry
             </button>
           </form>
         </div>
       </section>
 
-      <footer
-        style={{
-          background: "linear-gradient(135deg,#e63946,#ff9f1c)",
-          color: "#fff",
-          textAlign: "center",
-          padding: "30px 20px",
-          fontSize: 14,
-        }}
-      >
-        <p>
-          © {new Date().getFullYear()} Matt Hughes Windows & Power Washing | Licensed & Insured
-        </p>
-        <p>Serving Your City and Surrounding Areas</p>
+      {/* Footer */}
+      <footer className="bg-green-900 text-white text-center py-6">
+        <p>© {new Date().getFullYear()} Reginald’s Golf Training • All Rights Reserved</p>
       </footer>
     </div>
   );
